@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" role="img" aria-labelledby="gardenTitle gardenDesc">
+<title id="gardenTitle">George’s interactive garden illustration</title>
+<desc id="gardenDesc">A colourful perspective garden with a garden fence, hedges, flower borders, a green lawn, a pile of autumn leaves, a patio and a group of planters.</desc>
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d8f0ed"/><stop offset="1" stop-color="#f6f2dc"/></linearGradient>
+  <linearGradient id="lawn" x2=".15" y2="1"><stop stop-color="#b5cd77"/><stop offset=".55" stop-color="#93bd63"/><stop offset="1" stop-color="#74aa57"/></linearGradient>
+  <linearGradient id="fence" x2="0" y2="1"><stop stop-color="#f4eac8"/><stop offset="1" stop-color="#ddcca0"/></linearGradient>
+  <linearGradient id="patio" x2=".3" y2="1"><stop stop-color="#f7eed7"/><stop offset="1" stop-color="#e6d4b1"/></linearGradient>
+  <linearGradient id="soil" x2=".3" y2="1"><stop stop-color="#9c735a"/><stop offset="1" stop-color="#72533e"/></linearGradient>
+  <linearGradient id="bush" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#719f54"/><stop offset="1" stop-color="#386e47"/></linearGradient>
+  <radialGradient id="sunshine"><stop stop-color="#fff4bc" stop-opacity=".8"/><stop offset="1" stop-color="#fff4bc" stop-opacity="0"/></radialGradient>
+  <filter id="softshadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+  <g id="blade" fill="none" stroke-linecap="round"><path d="M0 0 Q-6 -9 -7 -17 M0 0 Q0 -12 5 -22 M0 0 Q8 -6 12 -12" stroke="#467a45" stroke-width="2.5"/></g>
+  <g id="flower-pink"><path fill="#e5a0aa" stroke="#bd7083" stroke-width=".8" d="M0 -5 C-13 -21 -22 -9 -10 0 C-28 3 -17 17 -4 8 C-5 27 11 17 7 5 C22 10 25 -6 8 -4 C12 -20 0 -21 0 -5Z"/><circle r="5" fill="#f9d789"/><circle r="2" fill="#fff8da"/></g>
+  <g id="flower-cream"><path fill="#fff7e4" stroke="#dcae7d" stroke-width=".9" d="M0 -4 C-10 -21 -19 -8 -9 0 C-25 3 -13 17 -4 8 C-4 23 11 17 7 4 C20 8 23 -8 8 -5 C11 -20 0 -18 0 -4Z"/><circle r="5" fill="#e9b75b"/></g>
+  <g id="flower-yellow"><path fill="#f0c66e" stroke="#d3a34f" stroke-width="1" d="M0 -4 C-9 -18 -17 -9 -8 0 C-19 3 -12 15 -4 7 C0 23 12 13 7 4 C22 8 18 -8 7 -4 C12 -18 0 -20 0 -4Z"/><circle r="4" fill="#995843"/></g>
+  <g id="leaf"><path d="M0 0 Q-12 -16 4 -25 Q21 -12 0 0Z" fill="#66984c" stroke="#46783d" stroke-width="1.2"/><path d="M0 0 6 -20" stroke="#a5bd77" stroke-width="1"/></g>
+  <g id="autumn-leaf"><path d="M0 13Q-3 2 -18 -1L-10 -7L-17 -16L-5 -14L-1 -27L5 -15L17 -18L12 -7L20 -2L5 2L0 13Z" stroke="#936c42" stroke-width="1.3" fill="#d29a4e"/><path d="M0 10 -1 -19" stroke="#976e43" stroke-width="1.6"/></g>
+</defs>
+<rect width="1000" height="650" fill="url(#sky)"/>
+<!-- Sunny sky, calm distant scenery -->
+<circle cx="770" cy="101" r="170" fill="url(#sunshine)"/>
+<circle cx="768" cy="102" r="42" fill="#fff4c9" opacity=".96"/>
+<g fill="#ffffff" opacity=".76"><path d="M52 114q15-25 42-15 19-29 47-12 20-7 33 13 28-5 34 17H54q-16-4-2-3Z"/><path d="M341 68q16-19 33-8 18-24 40-8 24-2 31 17 17-4 24 12H338q-10-7 3-13Z"/><path d="M835 196q12-21 35-11 16-20 34-7 21-1 23 17h17q15 5 8 15H833q-13-6 2-14Z"/></g>
+<path d="M0 312Q109 224 256 256Q420 190 531 260Q656 208 781 241Q919 198 1000 270V405H0Z" fill="#cddab1"/>
+<path d="M0 310Q122 280 245 295Q360 255 491 305Q617 263 749 291Q865 255 1000 315V405H0Z" fill="#a5c690"/>
+<path d="M0 332Q167 280 331 324Q467 287 570 329Q706 281 1000 322V390H0Z" fill="#84b37a"/>
+<!-- small distant house and trees at the vanishing point -->
+<g transform="translate(468 235)"><path d="M-36 48v-38L0 -7 35 10v38Z" fill="#f2dfb8" stroke="#a29c75" stroke-width="2"/><path d="M-44 12 0 -19 43 13 36 19 0-8 -37 21Z" fill="#b5795f"/><rect x="-18" y="20" width="12" height="12" fill="#8cb0a0"/><rect x="12" y="20" width="12" height="12" fill="#8cb0a0"/><rect x="-1" y="30" width="13" height="18" rx="2" fill="#a87954"/></g>
+<g fill="#4f925d" opacity=".9"><circle cx="423" cy="257" r="16"/><circle cx="426" cy="245" r="11"/><circle cx="551" cy="259" r="20"/><circle cx="558" cy="248" r="13"/><circle cx="365" cy="275" r="22"/><circle cx="607" cy="268" r="20"/></g>
+<path d="M0 341C171 296 315 301 481 308 678 300 825 296 1000 345V650H0Z" fill="url(#lawn)"/>
+<!-- subtle mowing stripes converging in the distance -->
+<path d="M479 309 304 650H374L489 309Z" fill="#c3d98a" opacity=".23"/><path d="M511 309 568 650h75L503 309Z" fill="#daeba0" opacity=".20"/><path d="M522 309 769 650h56L517 309Z" fill="#4e9054" opacity=".10"/>
+<path d="M0 395Q248 340 479 312Q766 317 1000 380" stroke="#e1e5a8" stroke-width="3" opacity=".50" fill="none"/>
+<!-- fence: receding boards on left -->
+<g stroke="#c8ac7e" stroke-width="2" stroke-linejoin="round">
+<path d="M10.0 344.0v-87.0q18.0 -17 36.0 0V344.0Z" fill="url(#fence)"/>
+<path d="M15.0 339.0v-80.0" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M69.1 338.8v-80.6q17.0 -17 34.0 0V338.8Z" fill="url(#fence)"/>
+<path d="M74.1 333.8v-73.6" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M110.1 333.6v-74.3q16.0 -17 32.0 0V333.6Z" fill="url(#fence)"/>
+<path d="M115.1 328.6v-67.3" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M146.2 328.4v-67.9q15.0 -17 30.0 0V328.4Z" fill="url(#fence)"/>
+<path d="M151.2 323.4v-60.9" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M179.5 323.2v-61.5q14.0 -17 27.9 0V323.2Z" fill="url(#fence)"/>
+<path d="M184.5 318.2v-54.5" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M210.8 318.0v-55.2q13.0 -17 25.9 0V318.0Z" fill="url(#fence)"/>
+<path d="M215.8 313.0v-48.2" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M240.6 312.8v-48.8q12.0 -17 23.9 0V312.8Z" fill="url(#fence)"/>
+<path d="M245.6 307.8v-41.8" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M269.3 307.6v-42.4q10.9 -17 21.9 0V307.6Z" fill="url(#fence)"/>
+<path d="M274.3 302.6v-35.4" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M297.0 302.4v-36.0q9.9 -17 19.9 0V302.4Z" fill="url(#fence)"/>
+<path d="M302.0 297.4v-29.0" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+<path d="M323.8 297.2v-29.7q8.9 -17 17.9 0V297.2Z" fill="url(#fence)"/>
+<path d="M328.8 292.2v-22.7" stroke="#fff7de" stroke-width="3" opacity=".7"/>
+</g>
+<path d="M0 313Q160 304 358 286" stroke="#b89667" stroke-width="10" fill="none"/><path d="M0 337Q160 327 358 309" stroke="#b89667" stroke-width="9" fill="none"/>
+<!-- right side fence recedes to the center -->
+<g stroke="#c8ac7e" stroke-width="1.7" stroke-linejoin="round">
+<path d="M690.0 300.0v-20.0q9.5 -16 19.0 0V300.0Z" fill="url(#fence)"/>
+<path d="M723.3 305.6v-26.7q10.4 -16 20.9 0V305.6Z" fill="url(#fence)"/>
+<path d="M756.7 311.1v-33.3q11.4 -16 22.8 0V311.1Z" fill="url(#fence)"/>
+<path d="M790.0 316.7v-40.0q12.3 -16 24.7 0V316.7Z" fill="url(#fence)"/>
+<path d="M823.3 322.2v-46.7q13.3 -16 26.6 0V322.2Z" fill="url(#fence)"/>
+<path d="M856.7 327.8v-53.3q14.2 -16 28.4 0V327.8Z" fill="url(#fence)"/>
+<path d="M890.0 333.3v-60.0q15.2 -16 30.3 0V333.3Z" fill="url(#fence)"/>
+<path d="M923.3 338.9v-66.7q16.1 -16 32.2 0V338.9Z" fill="url(#fence)"/>
+<path d="M956.7 344.4v-73.3q17.1 -16 34.1 0V344.4Z" fill="url(#fence)"/>
+<path d="M990.0 350.0v-80.0q18.0 -16 36.0 0V350.0Z" fill="url(#fence)"/>
+</g><path d="M687 277Q830 292 1000 299" stroke="#b89667" stroke-width="8" fill="none"/><path d="M690 298Q837 328 1000 343" stroke="#b89667" stroke-width="9" fill="none"/>
+<!-- tall, clipped hedging bordering the garden -->
+<path d="M608 327Q629 286 672 294Q693 259 737 273Q775 243 807 281Q846 269 873 313L863 353Q755 339 635 365Z" fill="#376a44" opacity=".35"/>
+<g fill="url(#bush)" stroke="#3f7549" stroke-width="2">
+<circle cx="633" cy="300" r="32"/>
+<circle cx="665" cy="289" r="33"/>
+<circle cx="700" cy="281" r="37"/>
+<circle cx="744" cy="270" r="41"/>
+<circle cx="791" cy="275" r="34"/>
+<circle cx="827" cy="288" r="30"/>
+<circle cx="861" cy="314" r="25"/>
+</g><g fill="#98bd6c" opacity=".38">
+<ellipse cx="650" cy="292" rx="13" ry="6"/>
+<ellipse cx="683" cy="277" rx="12" ry="8"/>
+<ellipse cx="727" cy="258" rx="16" ry="9"/>
+<ellipse cx="782" cy="262" rx="12" ry="7"/>
+<ellipse cx="839" cy="301" rx="9" ry="5"/>
+</g>
+<g fill="url(#bush)" stroke="#407548" stroke-width="2">
+<circle cx="46" cy="341" r="42"/>
+<circle cx="92" cy="335" r="35"/>
+<circle cx="127" cy="337" r="32"/>
+<circle cx="172" cy="341" r="31"/>
+<circle cx="219" cy="339" r="27"/>
+<circle cx="259" cy="329" r="20"/>
+</g>
+<!-- path and patio: paving stones widen toward the viewer -->
+<path d="M705 337Q758 326 793 330L1017 553V665H804L650 359Z" fill="#a38c65" opacity=".28" filter="url(#softshadow)"/>
+<path d="M701 337 783 337 1005 548V665H812L662 367Z" fill="url(#patio)" stroke="#c8ae82" stroke-width="4"/>
+<path d="M729 340 840 655M759 340 935 654M690 371 797 391 806 400M728 407 869 438 886 450M773 463 932 511M822 535 1000 591" fill="none" stroke="#d3bd98" stroke-width="3" opacity=".95"/>
+<g fill="#fff7e6" opacity=".37"><path d="M744 366 760 367 782 402 764 400Z"/><path d="M826 471 843 475 887 531 872 525Z"/><path d="M865 578 895 586 918 625 890 618Z"/></g>
+<!-- central garden's curve gently follows perspective -->
+<path d="M278 424 Q475 371 669 438" stroke="#d1e39b" fill="none" stroke-width="3" opacity=".65"/>
+<path d="M371 556 Q505 530 630 574" stroke="#d3e8a0" fill="none" stroke-width="5" opacity=".35"/>
+<!-- planted flower border left; curved bed in strong perspective -->
+<path d="M-16 470Q101 360 289 351Q323 352 352 400Q340 491 280 573L189 648H-17Z" fill="#568448" opacity=".55"/>
+<path d="M-17 493Q102 386 288 368Q324 380 334 419Q302 539 213 653H-17Z" fill="url(#soil)" stroke="#a17c59" stroke-width="4"/>
+<path d="M-15 504Q104 398 286 381" stroke="#d0aa78" stroke-width="7" fill="none" opacity=".8"/>
+
+<g transform="translate(41 440) scale(0.64)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(112 419) scale(0.75)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-cream" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(179 404) scale(0.6)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-yellow" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(247 397) scale(0.57)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(53 490) scale(0.89)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-yellow" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(126 470) scale(0.94)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(201 448) scale(0.83)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-cream" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(273 441) scale(0.85)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(18 553) scale(1.05)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-cream" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(97 533) scale(1.15)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(175 506) scale(1.06)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-yellow" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(252 488) scale(0.9)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-cream" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(47 607) scale(1.25)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(140 586) scale(1.2)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-cream" transform="translate(0 -28)"/>
+</g>
+<g transform="translate(222 549) scale(1.0)">
+<path d="M0 27Q-3 0 0 -27" stroke="#4f824c" stroke-width="5" fill="none" stroke-linecap="round"/>
+<use href="#leaf" transform="translate(-1 12) rotate(-35) scale(.78)"/><use href="#leaf" transform="translate(1 6) rotate(90) scale(.63)"/>
+<use href="#flower-pink" transform="translate(0 -28)"/>
+</g>
+<use href="#blade" transform="translate(338 610) scale(0.65)" opacity="0.62"/>
+<use href="#blade" transform="translate(510 574) scale(0.38)" opacity="0.52"/>
+<use href="#blade" transform="translate(624 362) scale(0.39)" opacity="0.55"/>
+<use href="#blade" transform="translate(361 608) scale(0.57)" opacity="0.39"/>
+<use href="#blade" transform="translate(404 375) scale(0.58)" opacity="0.53"/>
+<use href="#blade" transform="translate(334 484) scale(0.55)" opacity="0.40"/>
+<use href="#blade" transform="translate(375 600) scale(0.66)" opacity="0.37"/>
+<use href="#blade" transform="translate(388 561) scale(0.47)" opacity="0.50"/>
+<use href="#blade" transform="translate(573 414) scale(0.61)" opacity="0.26"/>
+<use href="#blade" transform="translate(399 484) scale(0.50)" opacity="0.57"/>
+<use href="#blade" transform="translate(463 469) scale(0.52)" opacity="0.55"/>
+<use href="#blade" transform="translate(374 444) scale(0.53)" opacity="0.56"/>
+<use href="#blade" transform="translate(414 438) scale(0.49)" opacity="0.30"/>
+<use href="#blade" transform="translate(342 387) scale(0.48)" opacity="0.31"/>
+<use href="#blade" transform="translate(449 618) scale(0.67)" opacity="0.50"/>
+<use href="#blade" transform="translate(524 575) scale(0.43)" opacity="0.48"/>
+<use href="#blade" transform="translate(580 621) scale(0.43)" opacity="0.60"/>
+<use href="#blade" transform="translate(467 414) scale(0.40)" opacity="0.59"/>
+<use href="#blade" transform="translate(571 574) scale(0.37)" opacity="0.28"/>
+<use href="#blade" transform="translate(481 503) scale(0.70)" opacity="0.53"/>
+<use href="#blade" transform="translate(477 594) scale(0.52)" opacity="0.29"/>
+<use href="#blade" transform="translate(426 371) scale(0.61)" opacity="0.34"/>
+<use href="#blade" transform="translate(633 611) scale(0.54)" opacity="0.53"/>
+<use href="#blade" transform="translate(366 380) scale(0.46)" opacity="0.34"/>
+<use href="#blade" transform="translate(339 434) scale(0.51)" opacity="0.42"/>
+<use href="#blade" transform="translate(334 408) scale(0.54)" opacity="0.53"/>
+<use href="#blade" transform="translate(385 623) scale(0.65)" opacity="0.55"/>
+<use href="#blade" transform="translate(434 404) scale(0.48)" opacity="0.30"/>
+<use href="#blade" transform="translate(547 446) scale(0.62)" opacity="0.50"/>
+<use href="#blade" transform="translate(385 558) scale(0.57)" opacity="0.50"/>
+<use href="#blade" transform="translate(475 597) scale(0.46)" opacity="0.62"/>
+<use href="#blade" transform="translate(580 567) scale(0.49)" opacity="0.45"/>
+<use href="#blade" transform="translate(429 581) scale(0.47)" opacity="0.50"/>
+<use href="#blade" transform="translate(458 507) scale(0.43)" opacity="0.55"/>
+<use href="#blade" transform="translate(374 527) scale(0.68)" opacity="0.39"/>
+<use href="#blade" transform="translate(491 461) scale(0.39)" opacity="0.36"/>
+<use href="#blade" transform="translate(473 550) scale(0.68)" opacity="0.37"/>
+<use href="#blade" transform="translate(574 563) scale(0.52)" opacity="0.52"/>
+<use href="#blade" transform="translate(588 567) scale(0.37)" opacity="0.48"/>
+<use href="#blade" transform="translate(460 555) scale(0.36)" opacity="0.37"/>
+<use href="#blade" transform="translate(617 520) scale(0.69)" opacity="0.60"/>
+<use href="#blade" transform="translate(370 502) scale(0.55)" opacity="0.42"/>
+<use href="#blade" transform="translate(382 436) scale(0.53)" opacity="0.42"/>
+<use href="#blade" transform="translate(400 546) scale(0.48)" opacity="0.56"/>
+<use href="#blade" transform="translate(355 470) scale(0.38)" opacity="0.42"/>
+<use href="#blade" transform="translate(631 391) scale(0.65)" opacity="0.39"/>
+<use href="#blade" transform="translate(600 373) scale(0.52)" opacity="0.40"/>
+<g fill="#d8d0ae" opacity=".55"><ellipse cx="404" cy="382" rx="8" ry="3"/><ellipse cx="438" cy="405" rx="6" ry="2"/><ellipse cx="584" cy="384" rx="6" ry="2"/><ellipse cx="534" cy="608" rx="10" ry="3"/></g>
+<!-- terracotta containers beside the paved area -->
+<ellipse cx="883" cy="430" rx="70" ry="15" fill="#50794c" opacity=".20"/>
+<g transform="translate(851 366)"><path d="M-20 13H24L18 60Q2 68-13 60Z" fill="#b97050" stroke="#94533e" stroke-width="2"/><ellipse cx="1" cy="13" rx="26" ry="8" fill="#ce8c68" stroke="#995b41" stroke-width="2"/><path d="M-3 7Q-28 -31 -17 -43Q-4 -42 0-18 Q9-52 21-49Q28-27 2-6 Q39-27 41-7Q29 3 5 1" fill="#57935d" stroke="#377046" stroke-width="3"/><path d="M0 9V-45" stroke="#456f47" stroke-width="4"/><use href="#flower-pink" transform="translate(0 -50) scale(.72)"/></g>
+<g transform="translate(921 386)"><path d="M-20 13H24L18 59Q2 69-13 59Z" fill="#d19169" stroke="#995b41" stroke-width="2"/><ellipse cx="1" cy="13" rx="26" ry="8" fill="#dca078" stroke="#995b41" stroke-width="2"/><path d="M-3 6Q-30 -25 -19 -36Q-5 -35 0-12 Q7 -49 24 -38Q28-19 6-5 Q26-28 38 -11Q31 1 2 4" fill="#6da35c" stroke="#407848" stroke-width="3"/><use href="#flower-yellow" transform="translate(4 -38) scale(.63)"/></g>
+
+<!-- seasonal leaf pile in the near foreground -->
+<ellipse cx="711" cy="551" rx="96" ry="17" fill="#506747" opacity=".19"/>
+<path d="M620 548Q640 526 663 520Q690 492 722 514Q749 486 778 524Q808 529 812 557Q709 582 620 548Z" fill="#b87a41" stroke="#8c663e" stroke-width="3"/>
+<path d="M632 545Q673 508 704 522Q731 500 768 535Q793 533 797 554" fill="none" stroke="#e4b96a" stroke-width="4" opacity=".6"/>
+
+<g transform="translate(645 536) rotate(-25) scale(0.8)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#d69a4e" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(674 526) rotate(37) scale(0.95)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#e3b15a" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(700 510) rotate(-12) scale(0.75)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#ce874c" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(731 522) rotate(44) scale(0.86)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#e0ad59" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(764 534) rotate(-18) scale(0.8)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#a86440" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(787 546) rotate(19) scale(0.75)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#d39b57" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(664 548) rotate(-8) scale(0.72)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#e1b165" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(710 548) rotate(30) scale(0.82)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#b67445" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<g transform="translate(745 551) rotate(-38) scale(0.66)"><path d="M0 13Q-4 1-19-3L-8-8L-16-19L-5-15L0-29L7-14L19-18L10-6L21-1L4 3Z" fill="#e4b26b" stroke="#996441" stroke-width="1.5"/><path d="M0 9 0 -19" stroke="#9b683e" stroke-width="1.5"/></g>
+<use href="#autumn-leaf" transform="translate(620 500) rotate(-60) scale(0.65)"/>
+<use href="#autumn-leaf" transform="translate(792 487) rotate(35) scale(0.65)"/>
+<use href="#autumn-leaf" transform="translate(806 511) rotate(-45) scale(0.46)"/>
+<use href="#autumn-leaf" transform="translate(660 484) rotate(73) scale(0.4)"/>
+<!-- tiny birds, butterfly and light highlights -->
+<g fill="none" stroke="#688979" stroke-width="3" stroke-linecap="round"><path d="m270 120q7-9 17 0 6-9 15-1"/><path d="m316 155q6-8 13 0 7-7 13-1"/></g>
+<g transform="translate(355 351) rotate(-12)"><ellipse cx="-6" cy="-4" rx="7" ry="10" fill="#f1c5a0"/><ellipse cx="6" cy="-4" rx="7" ry="10" fill="#e1a2a8"/><ellipse cx="-5" cy="7" rx="6" ry="7" fill="#d0adc3"/><ellipse cx="5" cy="7" rx="6" ry="7" fill="#f3c6a0"/><path d="M0-11V16" stroke="#536c46" stroke-width="2"/></g>
+<g stroke="#9cb97f" opacity=".75" stroke-linecap="round" fill="none"><path d="m397 313 16 3m179-3 13 2m-390 65 10 2" stroke-width="2"/></g>
+<!-- soft sun streak across far grass -->
+<path d="M540 321Q684 331 788 372" stroke="#ecf3c0" stroke-width="2" opacity=".45" fill="none"/>
+</svg>
