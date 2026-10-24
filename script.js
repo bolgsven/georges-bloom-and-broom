@@ -249,94 +249,34 @@
     });
   });
 
+  // The enquiry form uses native HTML POST to FormSubmit.
+  // This works on GitHub Pages without running our own server.
+  // The first submission triggers a one-time email activation for George.
   const form = document.getElementById('enquiry-form');
-  if (!form) return;
-
-  const contactEmail = String(window.GEORGE_SITE_CONFIG?.contactEmail || '').trim();
-  const isConnected = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail);
-  const submitButton = document.getElementById('submit-enquiry');
   const status = document.getElementById('form-status');
-  const demoNotice = document.getElementById('demo-notice');
-  const preparedPanel = document.getElementById('prepared-enquiry');
-  const preparedText = document.getElementById('enquiry-text');
-  const copyButton = document.getElementById('copy-enquiry');
 
-  if (isConnected) {
-    if (demoNotice) demoNotice.hidden = true;
-    // Change only the text node; retain the arrow icon.
-    if (submitButton?.firstChild) submitButton.firstChild.textContent = 'Open email draft ';
-  }
+  if (form) {
+    // Native required/type=email validation is preserved. This additional
+    // check prevents whitespace-only submissions in name/message fields.
+    form.addEventListener('submit', event => {
+      if (status) status.textContent = '';
+      const requiredTextFields = [
+        document.getElementById('your-name'),
+        document.getElementById('garden-message')
+      ].filter(Boolean);
 
-  form.querySelectorAll('input,textarea,select').forEach(input => {
-    input.addEventListener('input', () => {
-      input.classList.remove('invalid');
-      input.removeAttribute('aria-invalid');
-    });
-  });
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    if (status) status.textContent = '';
-
-    const nameField = document.getElementById('your-name');
-    const contactField = document.getElementById('contact-details');
-    const messageField = document.getElementById('garden-message');
-    const postcodeField = document.getElementById('your-postcode');
-    const requiredFields = [nameField, contactField, messageField];
-    const invalid = requiredFields.filter(input => !input.value.trim() || (input === contactField && input.value.trim().length < 5));
-    if (invalid.length) {
-      invalid.forEach(input => { input.classList.add('invalid'); input.setAttribute('aria-invalid', 'true'); });
-      invalid[0].focus();
-      if (status) status.textContent = 'Please add your name, a way to contact you, and a short message.';
-      return;
-    }
-
-    const details = [
-      "Hello George,",
-      "",
-      "I'd like to ask about some garden care.",
-      "",
-      `Name: ${nameField.value.trim()}`,
-      `Contact: ${contactField.value.trim()}`,
-      `Postcode: ${postcodeField.value.trim() || 'Not provided'}`,
-      `Service: ${serviceSelect?.value || 'Not sure yet'}`,
-      "",
-      "Garden / job details:",
-      messageField.value.trim(),
-      "",
-      "Many thanks"
-    ].join('\n');
-
-    if (isConnected) {
-      const subject = 'Garden enquiry — George’s Bloom & Broom';
-      const mailto = `mailto:${encodeURIComponent(contactEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(details)}`;
-      if (status) status.textContent = 'Your email application should open with a draft. Please press Send there to deliver it.';
-      window.location.href = mailto;
-    } else {
-      if (preparedPanel) preparedPanel.hidden = false;
-      if (preparedText) preparedText.value = details;
-      if (status) status.textContent = 'Enquiry prepared. It has not been sent.';
-      preparedPanel?.scrollIntoView({behavior:'smooth',block:'nearest'});
-    }
-  });
-
-  if (copyButton && preparedText) {
-    copyButton.addEventListener('click', async () => {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(preparedText.value);
-        } else {
-          preparedText.focus();
-          preparedText.select();
-          if (!document.execCommand('copy')) throw new Error('Copy not available');
-        }
-        copyButton.textContent = 'Copied!';
-        if (status) status.textContent = 'Enquiry details copied to your clipboard. Nothing has been sent.';
-      } catch (_error) {
-        preparedText.focus();
-        preparedText.select();
-        if (status) status.textContent = 'Select the enquiry text above and copy it manually.';
+      const emptyField = requiredTextFields.find(field => !field.value.trim());
+      if (emptyField) {
+        event.preventDefault();
+        emptyField.setCustomValidity('Please complete this field.');
+        emptyField.reportValidity();
+        emptyField.focus();
       }
     });
+
+    form.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('input', () => field.setCustomValidity(''));
+    });
   }
+
 }());
