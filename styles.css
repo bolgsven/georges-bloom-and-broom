@@ -3611,3 +3611,35 @@ html.mower-scroll-ready .container {
     }
   }
 }
+
+/* Customer review with heading */
+.bb-review-garden {
+  align-items: stretch;
+}
+
+.bb-review-marker {
+  flex-grow: 1;
+}
+
+.bb-review-title {
+  margin: 0 0 12px;
+  color: #244934;
+  font: 600 1.23rem/1.27 Georgia, serif;
+  letter-spacing: -.015em;
+}
+
+.bb-review:first-child .bb-review-text {
+  display: block;
+  flex: 1;
+  margin: 0 0 14px;
+  font: italic 1.02rem/1.54 Georgia, serif;
+}
+
+@media (max-width: 700px) {
+  .bb-review-title {
+    font-size: 1.25rem;
+  }
+  .bb-review:first-child .bb-review-text {
+    font-size: 1rem;
+  }
+}
