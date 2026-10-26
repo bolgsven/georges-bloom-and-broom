@@ -4051,3 +4051,238 @@ html.mower-scroll-ready .gb-welcome {
 @media (prefers-reduced-motion: reduce) {
   .gb-vine-growing, .gb-hover-flower { transition: none !important; }
 }
+
+
+/* ================================================================
+   REVIEW CAROUSEL - groups of three plant markers
+   Desktop and mobile, soft planting/bloom animation, reduced-motion safe.
+   ================================================================ */
+.bb-review-stage{position:relative; width:min(1410px,calc(100% - 28px));margin:0 auto;padding:0 clamp(49px,5.8vw,78px);z-index:4;}
+.bb-review-viewport{overflow:hidden;width:100%;border-radius:2px;transition:height .45s ease;}
+.bb-review-track{display:flex;align-items:flex-start;transition:transform .54s cubic-bezier(.2,.8,.2,1);will-change:transform;}
+.bb-review-page{flex:0 0 100%;width:100%;min-width:0;}
+.bb-review-page[aria-hidden="true"]{pointer-events:none;}
+.bb-review-garden{align-items:stretch;}
+.bb-review-marker{flex-grow:1;}
+.bb-review-title{margin:0 0 12px;color:#244934;font:600 1.23rem/1.27 Georgia,serif;letter-spacing:-.015em;}
+.bb-review-page:first-child .bb-review:first-child .bb-review-text{display:block;flex:1;margin:0 0 14px;font:italic 1.02rem/1.54 Georgia,serif;}
+/* Full, dimensional flower heads in a colour unique to each marker */
+.bb-review:nth-child(1) {--bb-flower-col:#e49aae; --bb-flower-edge:#c77792; --bb-flower-light:#ffebee;}
+.bb-review:nth-child(2) {--bb-flower-col:#ae94da; --bb-flower-edge:#8f72c2; --bb-flower-light:#e8dafb;}
+.bb-review:nth-child(3) {--bb-flower-col:#f1ab83; --bb-flower-edge:#dc916a; --bb-flower-light:#ffe5d0;}
+.bb-rating-flower{background:none;display:grid;place-items:center;isolation:isolate;}
+.bb-rating-flower::before,.bb-rating-flower::after{content:none!important;display:none!important;}
+.bb-petal-blossom{width:120%;height:120%;max-width:none;overflow:visible;filter:drop-shadow(0px 3px 2px rgba(60,55,41,.19));}
+.bb-flower-star{fill:#fff8e3;stroke:#9c7151;stroke-width:.45px;}
+.bb-rating-flower:not(.is-filled) .bb-flower-star{fill:#fff9e9;stroke:#bda083;stroke-width:1.3px;opacity:.70;}
+.bb-review-future .bb-review-marker{opacity:.84;}
+.bb-review-future .bb-rating-caption{opacity:.8;}
+.bb-review-nav{position:absolute;top:43%;transform:translateY(-50%);width:50px;height:50px;display:grid;place-items:center;z-index:7;border-radius:50%;background:#fffdf7;border:2px solid #c8b995;box-shadow:0 7px 20px rgba(45,65,44,.17),inset 0 0 0 3px #f9f5eb;color:#23543a;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s,opacity .2s;}
+.bb-review-nav svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.bb-review-nav-prev{left:8px;}
+.bb-review-nav-next{right:8px;}
+.bb-review-nav:hover:not(:disabled){background:#e9efe3;transform:translateY(-50%) scale(1.06);box-shadow:0 10px 24px rgba(45,65,44,.22),inset 0 0 0 3px #f9f5eb;}
+.bb-review-nav:disabled{opacity:.37;cursor:not-allowed;box-shadow:0 3px 7px rgba(45,65,44,.06);}
+.bb-review-nav:focus-visible{outline:3px solid #c96c8b;outline-offset:3px;}
+.bb-review-counter{position:absolute;bottom:27px;left:50%;transform:translateX(-50%);z-index:5;background:#f9f6eb;border:1px solid #d1d6c3;border-radius:99px;white-space:nowrap;padding:4px 14px;font-size:.66rem;font-weight:850;letter-spacing:.09em;color:#52765a;box-shadow:0 5px 14px rgba(40,50,36,.08);}
+.bb-review-counter strong{color:#b86f86;font-size:.88rem;}
+.bb-review-counter .bb-slash{padding:0 5px;color:#b4bda6;}
+.bb-reviews-disclaimer{padding-top:17px;}
+@media(max-width:700px){
+ .bb-review-stage{padding:0 2px 77px;width:min(465px,calc(100% - 18px));}
+ .bb-review-viewport{border-radius:12px;}
+ .bb-review-nav{top:auto;bottom:15px;transform:none;width:48px;height:48px;}
+ .bb-review-nav-prev{left:calc(50% - 114px);}
+ .bb-review-nav-next{right:calc(50% - 114px);}
+ .bb-review-nav:hover:not(:disabled){transform:scale(1.06);}
+ .bb-review-counter{bottom:23px;}
+ .bb-review-garden{padding-bottom:0;}
+ .bb-review{padding-bottom:28px;}
+ .bb-review-title{font-size:1.25rem;}
+ .bb-review-page:first-child .bb-review:first-child .bb-review-text{font-size:1rem;}
+ .bb-review-demo-label{font-size:.58rem;line-height:1.6;padding:0 18px;}
+ .bb-reviews-heading{margin-bottom:18px;}
+}
+@media(prefers-reduced-motion:reduce){.bb-review-track,.bb-review-viewport,.bb-review-nav{transition:none!important;}}
+
+/* ============================================================
+  Preview interaction: signs get planted, blossoms grow out of soil.
+  These styles are isolated to the review carousel only.
+============================================================ */
+.bb-review-page .bb-review:nth-child(1){--bb-card-stagger:0ms}
+.bb-review-page .bb-review:nth-child(2){--bb-card-stagger:79ms}
+.bb-review-page .bb-review:nth-child(3){--bb-card-stagger:158ms}
+.bb-flower-rating .bb-rating-flower:nth-child(1){--bb-bloom-stagger:0ms}
+.bb-flower-rating .bb-rating-flower:nth-child(2){--bb-bloom-stagger:76ms}
+.bb-flower-rating .bb-rating-flower:nth-child(3){--bb-bloom-stagger:151ms}
+.bb-flower-rating .bb-rating-flower:nth-child(4){--bb-bloom-stagger:227ms}
+.bb-flower-rating .bb-rating-flower:nth-child(5){--bb-bloom-stagger:302ms}
+
+/* While the next set slides in, the markers are still above the soil. */
+.bb-review-page.bb-is-ready .bb-review-marker{opacity:0;transform:translateY(-48px) scale(.987)}
+.bb-review-page.bb-is-ready .bb-marker-stake{opacity:0;transform:translateY(-44px) scaleY(.68)}
+.bb-review-page.bb-is-ready .bb-rating-flower{opacity:0;transform:translateY(17px) scale(.04) rotate(-24deg)}
+.bb-review-page.bb-is-ready .bb-rating-caption{opacity:0;transform:translateY(8px)}
+
+/* Lift the old set gently before the horizontal carousel transition. */
+.bb-review-page.bb-is-leaving .bb-review-marker{
+  animation:bb-lift-out 220ms ease-in forwards;
+}
+.bb-review-page.bb-is-leaving .bb-marker-stake{
+  animation:bb-stake-lift 220ms ease-in forwards;
+}
+.bb-review-page.bb-is-leaving .bb-rating-flower{
+  animation:bb-close-blossom 184ms ease-in forwards;
+}
+.bb-review-page.bb-is-leaving .bb-rating-caption{
+  animation:bb-caption-away 147ms ease-in forwards;
+}
+
+/* Each incoming sign drops, sinks into the soil, then settles. */
+.bb-review-page.bb-is-planting .bb-review-marker{
+  animation:bb-plant-marker 693ms cubic-bezier(.24,.62,.29,1) both;
+  animation-delay:var(--bb-card-stagger,0ms);
+}
+.bb-review-page.bb-is-planting .bb-marker-stake{
+  transform-origin:50% 100%;
+  animation:bb-plant-stake 682ms cubic-bezier(.24,.62,.29,1) both;
+  animation-delay:var(--bb-card-stagger,0ms);
+}
+.bb-review-page.bb-is-planting .bb-rating-flower{
+  transform-origin:center 75%;
+  animation:bb-bloom 556ms cubic-bezier(.2,.7,.24,1.06) both;
+  animation-delay:calc(430ms + var(--bb-card-stagger,0ms) + var(--bb-bloom-stagger,0ms));
+}
+.bb-review-page.bb-is-planting .bb-petal-blossom .bb-flower-leaves{
+  transform-box:fill-box;
+  transform-origin:center bottom;
+  animation:bb-leaf-open 514ms ease-out both;
+  animation-delay:calc(430ms + var(--bb-card-stagger,0ms) + var(--bb-bloom-stagger,0ms));
+}
+.bb-review-page.bb-is-planting .bb-rating-caption{
+  animation:bb-caption-appear 452ms ease-out both;
+  animation-delay:calc(914ms + var(--bb-card-stagger,0ms));
+}
+
+/* Small soil grains appear where each stake settles into earth. */
+.bb-soil-impact{
+  position:absolute;
+  width:65px;height:19px;
+  left:50%;bottom:65px;
+  transform:translateX(-50%);
+  z-index:2;pointer-events:none;opacity:0;
+}
+.bb-soil-impact::before,.bb-soil-impact::after{
+  content:"";position:absolute;border-radius:50%;
+  background:#a87a52;box-shadow:
+  -19px 2px 0 -1px #d1a077,
+  -9px -5px 0 -1px #80573d,
+  13px 0 0 -1px #c59870,
+  24px 7px 0 -1px #6f4935;
+}
+.bb-soil-impact::before{width:6px;height:5px;left:24px;top:7px;}
+.bb-soil-impact::after{width:4px;height:5px;left:32px;top:9px;opacity:.65;transform:scale(.7) rotate(19deg);}
+.bb-review-page.bb-is-planting .bb-soil-impact{
+  animation:bb-earth-burst 504ms ease-out both;
+  animation-delay:calc(404ms + var(--bb-card-stagger,0ms));
+}
+
+@keyframes bb-lift-out{
+  0%{opacity:1;translate:0 0}
+  100%{opacity:.72;translate:0 -18px}
+}
+@keyframes bb-stake-lift{
+  0%{opacity:1;translate:0 0}
+  100%{opacity:.8;translate:0 -15px}
+}
+@keyframes bb-close-blossom{
+  0%{opacity:1;transform:scale(1) translateY(0)}
+  100%{opacity:.1;transform:scale(.17) translateY(12px)}
+}
+@keyframes bb-caption-away{
+  from{opacity:1}to{opacity:0}
+}
+@keyframes bb-plant-marker{
+  0%{opacity:0;transform:translateY(-54px) scale(.98) rotate(-1.5deg)}
+  26%{opacity:1}
+  60%{opacity:1;transform:translateY(6px) scale(1.003) rotate(.18deg)}
+  80%{transform:translateY(-2px) scale(.999) rotate(-.08deg)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+}
+@keyframes bb-plant-stake{
+  0%{opacity:0;transform:translateY(-54px) scaleY(.65)}
+  30%{opacity:1}
+  60%{transform:translateY(6px) scaleY(1.016)}
+  80%{transform:translateY(-1.5px) scaleY(.996)}
+  100%{opacity:1;transform:translateY(0) scaleY(1)}
+}
+@keyframes bb-bloom{
+  0%{opacity:0;transform:translateY(18px) scale(.07) rotate(-35deg)}
+  45%{opacity:1}
+  70%{opacity:1;transform:translateY(-3px) scale(1.08) rotate(3deg)}
+  87%{transform:translateY(1px) scale(.985) rotate(-1deg)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}
+}
+@keyframes bb-leaf-open{
+  0%{opacity:0;transform:scale(.25) rotate(-25deg)}
+  70%{opacity:1;transform:scale(1.025) rotate(3deg)}
+  100%{opacity:1;transform:scale(1) rotate(0)}
+}
+@keyframes bb-earth-burst{
+  0%{opacity:0;transform:translateX(-50%) translateY(3px) scale(.42)}
+  25%{opacity:.78}
+  55%{opacity:.78;transform:translateX(-50%) translateY(-9px) scale(1.04)}
+  100%{opacity:0;transform:translateX(-50%) translateY(5px) scale(1.6)}
+}
+@keyframes bb-caption-appear{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:700px){
+  .bb-soil-impact{bottom:68px}
+}
+@media(prefers-reduced-motion:reduce){
+ .bb-review-page.bb-is-ready .bb-review-marker,
+ .bb-review-page.bb-is-ready .bb-marker-stake,
+ .bb-review-page.bb-is-ready .bb-rating-flower,
+ .bb-review-page.bb-is-ready .bb-rating-caption{
+  opacity:1;transform:none;
+ }
+ .bb-review-page.bb-is-planting *,
+ .bb-review-page.bb-is-leaving *{
+  animation:none!important;
+ }
+ .bb-soil-impact{display:none}
+}
+
+/* Fuller, detailed petals: unique colours for each review marker. */
+.bb-flower-petal {
+  fill: var(--bb-flower-col, #e49aae);
+  stroke: var(--bb-flower-edge, #c77792);
+  stroke-width: .8px;
+}
+.bb-flower-highlight { fill: var(--bb-flower-light, #ffebee); opacity: .42; }
+.bb-review-future .bb-review-marker { opacity: .93; }
+.bb-review-future .bb-review-author { font-style: italic; }
+.bb-review-page[aria-hidden="true"] { visibility: hidden; }
+.bb-review-page.bb-is-ready { visibility: visible !important; }
+.bb-review-stage .bb-review-garden { margin: 0; }
+.bb-review-nav { touch-action: manipulation; }
+/* Gentle focus styling is kept even for keyboard-only users. */
+.bb-review-nav:focus-visible { outline: 3px solid #c46b80; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .bb-review-page .bb-review-marker,
+  .bb-review-page .bb-marker-stake,
+  .bb-review-page .bb-rating-flower,
+  .bb-review-page .bb-rating-caption { animation: none !important; }
+}
+/* Make the desktop-only mower a little more discreet without removing it. */
+@media (min-width: 1180px) and (pointer: fine) {
+  .mower-scroll { width: 82px; right: 6px; }
+  .mower-thumb { width: 78px; height: 72px; left: -1px; }
+  .mower-lawn { width: 33px; }
+  .mower-clippings { top: 48px; right: 1px; transform: scale(.85); }
+  html.mower-scroll-ready .gb-welcome { padding-right: 88px; }
+}
+/* Portrait within its organic cut-out is centred across breakpoints. */
+.gb-welcome-portrait img { object-position: 50% 43%; }
