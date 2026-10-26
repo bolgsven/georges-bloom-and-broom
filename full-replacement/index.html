@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#214734" name="theme-color"/>
+  <meta content="George's Bloom &amp; Broom &mdash; friendly garden care for lawns, flowers, borders and outdoor spaces. Tell us about your garden and ask for a quote." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="George's Bloom &amp; Broom | Friendly Garden Care" property="og:title"/>
+  <meta content="A little love for your lawn, borders and everything in between." property="og:description"/>
+  <title>
+   George's Bloom &amp; Broom | Friendly Garden Care
+  </title>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <svg aria-hidden="true" class="icon-defs" focusable="false" xmlns="http://www.w3.org/2000/svg">
+   <symbol id="i-arrow" viewbox="0 0 24 24">
+    <path d="M4 12h15m-6-6 6 6-6 6">
+    </path>
+   </symbol>
+   <symbol id="i-grass" viewbox="0 0 48 48">
+    <path d="M6 40h36M17 40C8 27 12 21 12 21s7 7 9 19M25 40c0-19 6-29 6-29s1 15-1 29M33 40c3-11 8-15 8-15s-2 11-3 15">
+    </path>
+   </symbol>
+   <symbol id="i-flower" viewbox="0 0 48 48">
+    <circle cx="25" cy="16" r="4">
+    </circle>
+    <path d="M25 12c-6-12-12-3-6 2-13-4-12 8-2 8-7 9 5 13 8 4 4 9 15 4 9-4 10-1 9-12-3-9 5-9-4-14-6-1ZM25 28v15m0-6-8-5m8 7 8-6">
+    </path>
+   </symbol>
+   <symbol id="i-shears" viewbox="0 0 48 48">
+    <circle cx="14" cy="34" r="6">
+    </circle>
+    <circle cx="30" cy="36" r="6">
+    </circle>
+    <path d="M18 30 39 8M25 32 9 8m10 23 6-7">
+    </path>
+   </symbol>
+   <symbol id="i-sprout" viewbox="0 0 48 48">
+    <path d="M24 42V19m0 8C11 27 8 22 7 13c10-1 17 2 17 14Zm0-9c2-10 9-14 19-14 0 11-7 17-19 17">
+    </path>
+   </symbol>
+   <symbol id="i-rake" viewbox="0 0 48 48">
+    <path d="M33 7 17 32m-8 2 23 7M14 25l21 13m-23-8 4 7m2-12 4 12m2-10 3 11m4-8 1 6">
+    </path>
+   </symbol>
+   <symbol id="i-sun" viewbox="0 0 48 48">
+    <circle cx="25" cy="20" r="9">
+    </circle>
+    <path d="M25 4v4m0 24v4M9 20H5m36 0h-4M13 8l3 3m18 18 3 3m-3-24-3 3M13 32l3-3M8 42h34">
+    </path>
+   </symbol>
+   <symbol id="i-check" viewbox="0 0 24 24">
+    <path d="m5 12 4 4 10-10">
+    </path>
+   </symbol>
+   <symbol id="i-pin" viewbox="0 0 24 24">
+    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z">
+    </path>
+    <circle cx="12" cy="10" r="2.5">
+    </circle>
+   </symbol>
+  </svg>
+  <!-- Interactive desktop scrollbar. Normal page scrolling remains available on smaller screens. -->
+  <aside aria-controls="main" aria-label="Garden mower page scrollbar" aria-orientation="vertical" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="At the top of the page" class="mower-scroll" hidden="" id="mower-scroll" role="scrollbar" tabindex="0">
+   <span aria-hidden="true" class="mower-scroll-label">
+    SCROLL TO MOW
+   </span>
+   <div aria-hidden="true" class="mower-track" id="mower-track">
+    <span class="mower-lawn">
+     <span class="mower-long-grass">
+     </span>
+     <span class="mower-cut-grass" id="mower-cut-grass">
+     </span>
+    </span>
+    <span class="mower-thumb" id="mower-thumb">
+     <img alt="" draggable="false" height="82" src="assets/mower-gardener.svg" width="91"/>
+     <span aria-hidden="true" class="mower-clippings">
+      <i>
+      </i>
+      <i>
+      </i>
+      <i>
+      </i>
+      <i>
+      </i>
+      <i>
+      </i>
+     </span>
+    </span>
+   </div>
+   <span aria-hidden="true" class="mower-scroll-footer">
+    <span class="mower-progress" id="mower-progress">
+     0%
+    </span>
+    MOWN
+   </span>
+  </aside>
+  <div class="top-note">
+   <span aria-hidden="true" class="top-note-flower">
+    ✳
+   </span>
+   Little jobs, lovely gardens, a personal touch.
+   <span aria-hidden="true" class="top-note-flower">
+    ✳
+   </span>
+  </div>
+  <header class="site-header" id="top">
+   <div class="container header-inner">
+    <a aria-label="George's Bloom &amp; Broom homepage" class="brand" href="#top">
+     <span class="brand-mark-wrap">
+      <img alt="" class="brand-mark" height="58" src="assets/logo-symbol.png" width="58"/>
+     </span>
+     <span class="brand-lettering">
+      <strong>
+       George's
+      </strong>
+      <span>
+       BLOOM
+       <b>
+        &amp;
+       </b>
+       BROOM
+      </span>
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="site-nav" id="site-nav">
+     <a href="#services">
+      Explore the garden
+     </a>
+     <a href="#about">
+      About
+     </a>
+     <a href="#gallery">
+      Our inspiration
+     </a>
+     <a href="#how-it-works">
+      How it works
+     </a>
+     <a class="mobile-nav-contact" href="#quote">
+      Ask for a quote
+     </a>
+    </nav>
+    <a class="btn btn-small header-cta" href="#quote">
+     Ask for a quote
+     <svg class="arrow-icon">
+      <use href="#i-arrow">
+      </use>
+     </svg>
+    </a>
+    <button aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" class="menu-button" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </div>
+  <!-- Decorative thicker vine; does not replace the existing navigation. -->
+<div class="gb-vine-border" id="gb-vine-border" aria-hidden="true">
+<svg class="gb-vine-svg" viewBox="0 0 1200 82" preserveAspectRatio="none" focusable="false" aria-hidden="true">
+<path class="gb-vine-shadow" d="M-30 44 C45 27 113 39 174 43 S283 55 345 43 S460 27 524 40 S641 57 707 43 S836 26 893 40 S1032 53 1104 43 S1182 36 1230 43"/>
+<path class="gb-vine-growing" pathLength="1000" stroke-dasharray="1000 1000" stroke-dashoffset="800" d="M-30 44 C45 27 113 39 174 43 S283 55 345 43 S460 27 524 40 S641 57 707 43 S836 26 893 40 S1032 53 1104 43 S1182 36 1230 43"/>
+<g class="gb-vine-sprig" transform="translate(30.0 46.7) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(75.0 49.3) rotate(-8) scale(1.03)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(120.0 47.2) rotate(7) scale(0.9)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(165.0 45.5) rotate(-5) scale(1.12)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(210.0 44.0) rotate(10) scale(1.0)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(255.0 39.2) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(300.0 33.7) rotate(-8) scale(1.03)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(345.0 34.2) rotate(7) scale(0.9)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(390.0 39.9) rotate(-5) scale(1.12)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(435.0 44.1) rotate(10) scale(1.0)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(480.0 45.4) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(525.0 47.6) rotate(-8) scale(1.03)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(570.0 49.5) rotate(7) scale(0.9)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(615.0 46.0) rotate(-5) scale(1.12)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(660.0 38.7) rotate(10) scale(1.0)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(705.0 34.9) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(750.0 36.3) rotate(-8) scale(1.03)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(795.0 38.1) rotate(7) scale(0.9)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(840.0 39.2) rotate(-5) scale(1.12)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(885.0 43.5) rotate(10) scale(1.0)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(930.0 49.5) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(975.0 50.5) rotate(-8) scale(1.03)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(1020.0 45.4) rotate(7) scale(0.9)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(1065.0 40.7) rotate(-5) scale(1.12)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(1110.0 39.0) rotate(10) scale(1.0)">
+<path class="gb-vine-stem" d="M0 0 Q-6 -19 -27 -27"/>
+<path class="gb-vine-leaf" d="M-26 -27 Q-41 -51 -55 -40 Q-55 -22 -26 -27Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M-11 -13 Q-8 -35 6 -36 Q9 -18 -11 -13Z"/>
+</g>
+<g class="gb-vine-sprig" transform="translate(1155.0 37.0) rotate(0) scale(0.92)">
+<path class="gb-vine-stem" d="M0 0 Q11 14 27 24"/>
+<path class="gb-vine-leaf" d="M26 23 Q50 16 53 35 Q39 48 26 23Z"/>
+<path class="gb-vine-leaf gb-vine-small-leaf" d="M12 10 Q10 31 -6 31 Q-6 15 12 10Z"/>
+</g>
+<g class="gb-vine-static-flower" transform="translate(245 43) scale(1.2)">
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(0)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(72)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(144)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(216)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(288)"/>
+<circle class="gb-vine-flower-centre" r="5.6"/>
+<circle cx="-1.3" cy="-1.3" r="1.7" fill="#fff5ca"/>
+</g>
+<g class="gb-vine-static-flower" transform="translate(510 37) scale(0.92)">
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(0)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(72)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(144)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(216)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(288)"/>
+<circle class="gb-vine-flower-centre" r="5.6"/>
+<circle cx="-1.3" cy="-1.3" r="1.7" fill="#fff5ca"/>
+</g>
+<g class="gb-vine-static-flower" transform="translate(786 42) scale(1.23)">
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(0)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(72)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(144)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(216)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(288)"/>
+<circle class="gb-vine-flower-centre" r="5.6"/>
+<circle cx="-1.3" cy="-1.3" r="1.7" fill="#fff5ca"/>
+</g>
+<g class="gb-vine-static-flower" transform="translate(1056 43) scale(1.03)">
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(0)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(72)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(144)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(216)"/>
+<ellipse class="gb-vine-petal" cx="0" cy="-9.3" rx="6.9" ry="10.3" transform="rotate(288)"/>
+<circle class="gb-vine-flower-centre" r="5.6"/>
+<circle cx="-1.3" cy="-1.3" r="1.7" fill="#fff5ca"/>
+</g>
+</svg>
+<span class="gb-hover-flower" aria-hidden="true">
+ <svg viewBox="0 0 60 60" focusable="false" aria-hidden="true">
+   <g class="gb-hover-petals">
+     <ellipse cx="30" cy="14.5" rx="10.1" ry="14.6" />
+     <ellipse cx="30" cy="14.5" rx="10.1" ry="14.6" transform="rotate(72 30 30)" />
+     <ellipse cx="30" cy="14.5" rx="10.1" ry="14.6" transform="rotate(144 30 30)" />
+     <ellipse cx="30" cy="14.5" rx="10.1" ry="14.6" transform="rotate(216 30 30)" />
+     <ellipse cx="30" cy="14.5" rx="10.1" ry="14.6" transform="rotate(288 30 30)" />
+   </g>
+   <circle cx="30" cy="30" r="8.4" fill="#f9d78d" stroke="#d1a86e" stroke-width="1.3" />
+   <circle cx="27" cy="27" r="2" fill="#fff5d3" />
+ </svg>
+</span>
+</div>
+</header>
+  <main id="main">
+   <!-- WELCOME SECTION: Meet George and areas covered.
+     Replace the original <section class="hero"> ... </section> ONLY.
+     Photo is an illustrative stand-in, not a photograph of George.
+     Map is illustrative; verify borders and availability before presenting as exact coverage. -->
+<section class="gb-welcome" aria-labelledby="hero-title" id="welcome">
+  <div class="gb-welcome-layout">
+    <div class="gb-welcome-about">
+      <div class="gb-welcome-copy">
+        <p class="gb-welcome-kicker">WELCOME TO BLOOM &amp; BROOM</p>
+        <h1 id="hero-title">Meet <span>George</span></h1>
+        <p class="gb-welcome-bio">
+          Hi, I'm George. I provide friendly, reliable gardening services
+          to help you keep your outdoor spaces looking their best. I take
+          pride in my work and enjoy transforming gardens of all shapes
+          and sizes, from small town gardens to larger outdoor spaces.
+        </p>
+      </div>
+      <figure class="gb-welcome-portrait">
+        <img
+          src="assets/meet-george-placeholder.jpg"
+          alt="Illustrative portrait of a gardener. This is a sample image, not George."
+          width="436" height="611" fetchpriority="high"
+        />
+        <figcaption>Sample portrait &mdash; replace with George's photograph</figcaption>
+      </figure>
+      <div class="gb-welcome-actions">
+        <a class="gb-welcome-button gb-welcome-button-primary" href="#services">
+          <span aria-hidden="true">&#10047;</span>
+          View my services
+          <span class="gb-welcome-button-arrow" aria-hidden="true">&rsaquo;</span>
+        </a>
+        <a class="gb-welcome-button gb-welcome-button-outline" href="#quote">
+          Get in touch
+          <span class="gb-welcome-button-arrow" aria-hidden="true">&rsaquo;</span>
+        </a>
+      </div>
+    </div>
+    <div class="gb-welcome-map-panel" aria-labelledby="gb-welcome-map-title">
+      <h2 id="gb-welcome-map-title">Areas I <em>Work In</em></h2>
+      <div class="gb-welcome-map-frame">
+        <img
+          src="assets/service-area-illustration.jpg"
+          alt="Illustrative green coverage shading centred around Leighton Buzzard, extending towards Oxfordshire, Buckinghamshire, Bedfordshire and Hertfordshire. The shapes are a design concept and not verified county boundaries."
+          width="866" height="778" fetchpriority="high"
+        />
+      </div>
+      <p class="gb-welcome-map-note">
+        Illustrative coverage map. Please enquire to confirm your location.
+      </p>
+    </div>
+  </div>
+</section>
+   <div class="service-strip">
+    <div class="container strip-inner">
+     <span>
+      <i aria-hidden="true">
+       ✳
+      </i>
+      A little more green
+     </span>
+     <span>
+      <i aria-hidden="true">
+       ✳
+      </i>
+      A lot less hassle
+     </span>
+     <span>
+      <i aria-hidden="true">
+       ✳
+      </i>
+      More time to enjoy it
+     </span>
+    </div>
+   </div>
+   <section aria-labelledby="services-title" class="section services-section virtual-garden-section preferred-garden-design" id="services">
+    <div class="container">
+     <div class="section-heading garden-heading">
+      <div>
+       <span class="section-label">
+        A GARDEN FULL OF POSSIBILITIES
+        <span aria-hidden="true">
+         / 01
+        </span>
+       </span>
+       <h2 id="services-title">
+        Explore our garden services
+       </h2>
+      </div>
+      <div class="garden-intro">
+       <p>
+        Hover over an area of the garden to reveal the service name, or tap an area on mobile.
+       </p>
+       <span class="garden-instruction">
+        Hover to reveal &middot; Tap on mobile
+       </span>
+      </div>
+     </div>
+     <div class="garden-explorer" id="garden-explorer">
+      <div class="garden-scene-column">
+       <div aria-label="Interactive garden service scene with hover-reveal labels and eight larger clickable areas; swipe sideways on a mobile to explore" class="garden-viewport" tabindex="0">
+        <div class="garden-scene approved-service-poster">
+         <img alt="Garden services concept: sunny landscaped garden with patio slabs in front of a central lawn, colourful flowerbeds and hedge on the left, wooden fence at the back, trees and a shed on the right." class="garden-artwork" draggable="false" height="1024" loading="lazy" src="assets/garden-services-preferred.webp" width="1536"/>
+         <button aria-controls="garden-detail" aria-label="Explore Hedge trimming" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="hedges" style="--x:13.5%;--y:31%;--w:19%;--h:34%;--radius:26px" title="Explore Hedge trimming" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Hedge trimming
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Fence painting &amp; care" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="fence" style="--x:51%;--y:36%;--w:44%;--h:15%;--radius:16px" title="Explore Fence painting &amp; care" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Fence painting &amp; care
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Flower beds &amp; planting" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="borders" style="--x:15%;--y:52%;--w:22%;--h:29%;--radius:28px" title="Explore Flower beds &amp; planting" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Flower beds &amp; planting
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Lawn mowing &amp; edging" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="lawn" style="--x:48%;--y:56%;--w:33%;--h:24%;--radius:28px" title="Explore Lawn mowing &amp; edging" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Lawn mowing &amp; edging
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Leaf collection" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="leaves" style="--x:77.5%;--y:57%;--w:19%;--h:19%;--radius:24px" title="Explore Leaf collection" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Leaf collection &amp; tidy-ups
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Patio &amp; path cleaning" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="patio" style="--x:45%;--y:84%;--w:50%;--h:21%;--radius:18px" title="Explore Patio &amp; path cleaning" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Patio &amp; path cleaning
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Tree pruning &amp; clearance" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="tree" style="--x:84%;--y:18.5%;--w:18%;--h:25%;--radius:26px" title="Explore Tree pruning &amp; clearance" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Tree pruning &amp; clearance
+          </span>
+         </button>
+         <button aria-controls="garden-detail" aria-label="Explore Shed &amp; garden organisation" aria-pressed="false" class="garden-hotspot poster-hotspot" data-garden="shed" style="--x:92%;--y:34%;--w:15%;--h:27%;--radius:16px" title="Explore Shed &amp; garden organisation" type="button">
+          <span aria-hidden="true" class="area-heading">
+           Shed &amp; garden organisation
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="garden-scene-bottom">
+        <span class="garden-discover-count">
+         8 garden services to discover
+        </span>
+        <span class="garden-swipe-hint">
+         <span aria-hidden="true">
+          &larr; &rarr;
+         </span>
+         Swipe to explore the whole garden
+        </span>
+        <span class="garden-credit">
+         Concept garden artwork, not photography of George&rsquo;s completed work.
+        </span>
+       </div>
+      </div>
+      <aside aria-atomic="false" aria-labelledby="garden-detail-title" aria-live="polite" class="garden-detail" id="garden-detail">
+       <div class="garden-detail-top">
+        <span class="detail-overline">
+         YOU'RE EXPLORING
+         <span id="garden-detail-number">
+          04 / 08
+         </span>
+        </span>
+        <span aria-hidden="true" class="detail-flower">
+         ✿
+        </span>
+       </div>
+       <p class="detail-location" id="garden-detail-place">
+        THE FRONT LAWN
+       </p>
+       <h3 id="garden-detail-title">
+        Lawn mowing &amp; edging
+       </h3>
+       <p class="detail-description" id="garden-detail-description">
+        A freshly cut lawn and tidy edges make a lovely first impression, without the weekend work.
+       </p>
+       <div class="garden-examples">
+        <div class="examples-heading">
+         <strong>
+          A little before &amp; after
+         </strong>
+         <span>
+          Illustrative example
+         </span>
+        </div>
+        <div class="examples-pair">
+         <figure>
+          <img alt="Illustration of long uneven grass" height="210" id="garden-example-before" loading="lazy" src="assets/examples/lawn-before.svg" width="320"/>
+          <figcaption>
+           Before
+          </figcaption>
+         </figure>
+         <figure>
+          <img alt="Illustration of neatly trimmed grass" height="210" id="garden-example-after" loading="lazy" src="assets/examples/lawn-after.svg" width="320"/>
+          <figcaption>
+           After
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <p class="garden-work-note">
+        Before-and-after pictures are illustrative examples, not jobs completed by George.
+       </p>
+       <a class="garden-enquire" data-service="Lawn mowing &amp; edging" href="#quote" id="garden-enquire">
+        Ask George about this
+        <span aria-hidden="true">
+         &nearrow;
+        </span>
+       </a>
+      </aside>
+     </div>
+     <div aria-label="Choose a garden service" class="garden-shortcuts" role="group">
+      <button aria-pressed="false" class="garden-shortcut" data-garden="hedges" type="button">
+       Hedge trimming
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="fence" type="button">
+       Fence painting &amp; care
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="borders" type="button">
+       Flower beds &amp; planting
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="lawn" type="button">
+       Lawn mowing &amp; edging
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="leaves" type="button">
+       Leaf collection
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="patio" type="button">
+       Patio &amp; path cleaning
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="tree" type="button">
+       Tree pruning &amp; clearance
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+      <button aria-pressed="false" class="garden-shortcut" data-garden="shed" type="button">
+       Shed &amp; garden organisation
+       <span aria-hidden="true">
+        &nearrow;
+       </span>
+      </button>
+     </div>
+     <p class="garden-service-note">
+      <span aria-hidden="true">
+       ✿
+      </span>
+      Not sure which part of your garden needs attention?
+      <a href="#quote">
+       Tell George about your garden
+      </a>
+      and take it from there.
+      <span class="garden-service-confirmation">
+       All service examples are provisional until George confirms what he offers.
+      </span>
+     </p>
+    </div>
+   </section>
+   <section aria-labelledby="about-title" class="about-section" id="about">
+    <div class="container about-grid">
+     <div class="about-art">
+      <div class="about-art-card">
+       <div aria-hidden="true" class="about-decor decor-a">
+        ✳
+       </div>
+       <img alt="George's Bloom &amp; Broom logo showing a pink flower, leaves and sweeping broom" height="1254" loading="lazy" src="assets/logo-original.webp" width="1254"/>
+       <div aria-hidden="true" class="about-decor decor-b">
+        ✿
+       </div>
+      </div>
+      <div class="about-stamp">
+       <span>
+        GOOD THINGS
+        <br/>
+        GROW WITH CARE
+       </span>
+       <span aria-hidden="true" class="stamp-daisy">
+        ✳
+       </span>
+      </div>
+     </div>
+     <div class="about-copy">
+      <span class="section-label">
+       A LITTLE ABOUT US
+       <span aria-hidden="true">
+        / 02
+       </span>
+      </span>
+      <h2 id="about-title">
+       Garden care with a
+       <em>
+        neighbourly feel.
+       </em>
+      </h2>
+      <p class="about-lead">
+       There's something special about stepping outside to a garden that feels just right.
+      </p>
+      <p>
+       At George's Bloom &amp; Broom, the idea is simple: friendly, practical help to keep lawns, borders and outdoor spaces looking their best &mdash; so you can get back to enjoying them.
+      </p>
+      <div class="about-values">
+       <div>
+        <span class="value-tick">
+         <svg>
+          <use href="#i-check">
+          </use>
+         </svg>
+        </span>
+        <span>
+         Down-to-earth, personal service
+        </span>
+       </div>
+       <div>
+        <span class="value-tick">
+         <svg>
+          <use href="#i-check">
+          </use>
+         </svg>
+        </span>
+        <span>
+         Care for the details that matter
+        </span>
+       </div>
+       <div>
+        <span class="value-tick">
+         <svg>
+          <use href="#i-check">
+          </use>
+         </svg>
+        </span>
+        <span>
+         Help for everyday garden jobs
+        </span>
+       </div>
+      </div>
+      <a class="inline-arrow" href="#quote">
+       Say hello to George
+       <svg class="arrow-icon">
+        <use href="#i-arrow">
+        </use>
+       </svg>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="gallery-title" class="section gallery-section" id="gallery">
+    <div class="container">
+     <div class="section-heading gallery-heading">
+      <div>
+       <span class="section-label">
+        GARDEN INSPIRATION
+        <span aria-hidden="true">
+         / 03
+        </span>
+       </span>
+       <h2 id="gallery-title">
+        A little corner of
+        <em>
+         lovely.
+        </em>
+       </h2>
+      </div>
+      <p>
+       The sort of green spaces that make you want to put the kettle on and sit outside a while.
+      </p>
+     </div>
+     <div class="gallery-grid">
+      <figure class="gallery-item gallery-feature">
+       <img alt="Long, lush green lawn with planted borders" data-photo-url="https://images.unsplash.com/photo-1641317430847-243b44c07125?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" height="800" loading="lazy" src="assets/garden-lawn.svg" width="900"/>
+       <figcaption>
+        <span>
+         01 / LAWN CARE
+        </span>
+        <strong>
+         That just-mowed feeling
+        </strong>
+       </figcaption>
+      </figure>
+      <figure class="gallery-item">
+       <img alt="Yellow garden roses blooming beside a white fence" data-photo-url="https://images.unsplash.com/photo-1763618769340-729f3e400156?auto=format&amp;fit=crop&amp;w=850&amp;q=80" height="800" loading="lazy" src="assets/garden-borders.svg" width="900"/>
+       <figcaption>
+        <span>
+         02 / FLOWER BORDERS
+        </span>
+        <strong>
+         Room to bloom
+        </strong>
+       </figcaption>
+      </figure>
+      <figure class="gallery-item">
+       <img alt="Rose-covered arch over a garden walkway" data-photo-url="https://images.unsplash.com/photo-1716366091677-6c92a52c0fb8?auto=format&amp;fit=crop&amp;w=850&amp;q=80" height="800" loading="lazy" src="assets/garden-tidy.svg" width="900"/>
+       <figcaption>
+        <span>
+         03 / GARDEN DETAILS
+        </span>
+        <strong>
+         Love the little corners
+        </strong>
+       </figcaption>
+      </figure>
+      <figure class="gallery-item gallery-wide">
+       <img alt="Peaceful garden path among flowers and trees" data-photo-url="https://images.unsplash.com/photo-1762765306217-bdbfc1453bf3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" height="800" loading="lazy" src="assets/garden-seasonal.svg" width="900"/>
+       <figcaption>
+        <span>
+         04 / OUTDOOR SPACES
+        </span>
+        <strong>
+         More time to enjoy outdoors
+        </strong>
+       </figcaption>
+      </figure>
+     </div>
+     <p class="gallery-disclaimer">
+      Illustrative photographs and artwork &mdash; these are not presented as George's completed projects. Real project photos can be added once available.
+      <a href="https://unsplash.com/license" rel="noopener noreferrer" target="_blank">
+       Photo licensing
+      </a>
+      .
+     </p>
+    </div>
+   </section>
+   <section aria-labelledby="steps-title" class="section steps-section" id="how-it-works">
+    <div class="container">
+     <div class="steps-heading">
+      <span class="section-label">
+       NICE AND EASY
+       <span aria-hidden="true">
+        / 04
+       </span>
+      </span>
+      <h2 id="steps-title">
+       Your garden's next chapter
+       <br/>
+       <em>
+        starts with a hello.
+       </em>
+      </h2>
+     </div>
+     <div class="steps-list">
+      <div class="step">
+       <span class="step-number">
+        01
+       </span>
+       <span aria-hidden="true" class="step-icon">
+        ✳
+       </span>
+       <h3>
+        Say hello
+       </h3>
+       <p>
+        Tell us your name and a little about your garden.
+       </p>
+      </div>
+      <div class="step">
+       <span class="step-number">
+        02
+       </span>
+       <span aria-hidden="true" class="step-icon">
+        ✿
+       </span>
+       <h3>
+        Show us what needs doing
+       </h3>
+       <p>
+        From mowing to a full tidy-up, let us know what you'd like help with.
+       </p>
+      </div>
+      <div class="step">
+       <span class="step-number">
+        03
+       </span>
+       <span aria-hidden="true" class="step-icon">
+        ❋
+       </span>
+       <h3>
+        Let's make a plan
+       </h3>
+       <p>
+        We'll discuss the work and the next steps before anything begins.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="quote-title" class="quote-section" id="quote">
+    <div class="container quote-grid">
+     <div class="quote-copy">
+      <span class="section-label light-label">
+       LET'S GET GROWING
+       <span aria-hidden="true">
+        / 05
+       </span>
+      </span>
+      <h2 id="quote-title">
+       Have a garden
+       <br/>
+       job in
+       <em>
+        mind?
+       </em>
+      </h2>
+      <p>
+       Whether it's a little trim or a garden that needs some serious TLC, we'd love to hear what you have in mind.
+      </p>
+      <div aria-hidden="true" class="quote-doodle">
+       <svg viewbox="0 0 360 190">
+        <path d="M20 149q43-89 113-66t80 16q42-14 80-68" fill="none" stroke="#b5ca98" stroke-dasharray="8 12" stroke-linecap="round" stroke-width="2.5">
+        </path>
+        <path d="M281 42l12-11 2 17" fill="none" stroke="#b5ca98" stroke-linecap="round" stroke-width="3">
+        </path>
+        <path d="M66 134q-28-50 10-76q33 19 8 48 M80 111q44-61 76-26q-8 36-60 37" fill="#b7ca93" opacity=".75">
+        </path>
+       </svg>
+      </div>
+      <p class="quote-aside">
+       <span aria-hidden="true">
+        ✿
+       </span>
+       No question is too small.
+      </p>
+     </div>
+     <div class="quote-form-card">
+      <div class="form-card-heading">
+       <span aria-hidden="true" class="form-daisy">
+        ✳
+       </span>
+       <div>
+        <h3>
+         Tell us about your garden
+        </h3>
+        <p>
+         Send your details directly to George to discuss a quote.
+        </p>
+       </div>
+      </div>
+      <form action="https://formsubmit.co/matticusblack@gmail.com" id="enquiry-form" method="POST">
+       <input name="_subject" type="hidden" value="New garden enquiry &mdash; George's Bloom &amp; Broom"/>
+       <input name="_template" type="hidden" value="table"/>
+       <input aria-hidden="true" autocomplete="off" class="form-honeypot" name="_honey" tabindex="-1" type="text" value=""/>
+       <div class="field-row">
+        <div class="form-field">
+         <label for="your-name">
+          Your name
+          <span aria-hidden="true">
+           *
+          </span>
+         </label>
+         <input autocomplete="name" id="your-name" maxlength="100" name="name" placeholder="e.g. Alex Smith" required="" type="text"/>
+        </div>
+        <div class="form-field">
+         <label for="contact-email">
+          Email address
+          <span aria-hidden="true">
+           *
+          </span>
+         </label>
+         <input autocomplete="email" id="contact-email" maxlength="140" name="email" placeholder="e.g. alex@example.com" required="" type="email"/>
+        </div>
+       </div>
+       <div class="field-row">
+        <div class="form-field">
+         <label for="your-postcode">
+          Postcode (optional)
+         </label>
+         <input autocomplete="postal-code" id="your-postcode" maxlength="20" name="postcode" placeholder="e.g. OX26" type="text"/>
+        </div>
+        <div class="form-field">
+         <label for="your-phone">
+          Phone number (optional)
+         </label>
+         <input autocomplete="tel" id="your-phone" maxlength="35" name="phone" placeholder="Best number to contact you" type="tel"/>
+        </div>
+       </div>
+       <div class="form-field">
+        <label for="your-service">
+         What do you need help with?
+        </label>
+        <select id="your-service" name="service">
+         <option value="Not sure yet">
+          I'm not sure yet
+         </option>
+         <option value="Lawn mowing &amp; edging">
+          Lawn mowing &amp; edging
+         </option>
+         <option value="Weeding &amp; borders">
+          Weeding &amp; borders
+         </option>
+         <option value="Hedges &amp; shrubs">
+          Hedges &amp; shrubs
+         </option>
+         <option value="Planting &amp; garden care">
+          Planting &amp; garden care
+         </option>
+         <option value="Seasonal garden tidy-ups">
+          Seasonal garden tidy-ups
+         </option>
+         <option value="Leaf collection &amp; seasonal tidy-ups">
+          Leaf collection &amp; seasonal tidy-ups
+         </option>
+         <option value="Fence painting &amp; care">
+          Fence painting &amp; care
+         </option>
+         <option value="Patio &amp; path care">
+          Patio &amp; path care
+         </option>
+         <option value="Planting &amp; pots">
+          Planting &amp; pots
+         </option>
+         <option value="Outdoor space upkeep">
+          Outdoor space upkeep
+         </option>
+         <option value="Tree pruning &amp; clearance">
+          Tree pruning &amp; clearance
+         </option>
+         <option value="Shed &amp; garden organisation">
+          Shed &amp; garden organisation
+         </option>
+         <option value="Something else">
+          Something else
+         </option>
+        </select>
+       </div>
+       <div class="form-field">
+        <label for="garden-message">
+         Tell us a little more
+         <span aria-hidden="true">
+          *
+         </span>
+        </label>
+        <textarea id="garden-message" maxlength="2500" name="message" placeholder="What's happening in your garden? What would you like done?" required="" rows="4"></textarea>
+       </div>
+       <p class="form-privacy">
+        This form uses FormSubmit, a third-party service, to forward your enquiry to George.
+    Please don't include sensitive personal information.
+       </p>
+       <button class="btn btn-primary btn-submit" id="submit-enquiry" type="submit">
+        Send enquiry to George
+        <svg class="arrow-icon">
+         <use href="#i-arrow">
+         </use>
+        </svg>
+       </button>
+       <p aria-live="polite" class="form-status" id="form-status" role="status">
+       </p>
+       <p class="form-email-alternative">
+        Prefer your own email app?
+        <a href="mailto:matticusblack@gmail.com?subject=Garden%20enquiry%20-%20George%27s%20Bloom%20%26%20Broom">
+         Email George directly
+        </a>
+        .
+       </p>
+      </form>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="faq-title" class="faq-section section" id="faq">
+    <div class="container faq-grid">
+     <div>
+      <span class="section-label">
+       GOOD TO KNOW
+       <span aria-hidden="true">
+        / 06
+       </span>
+      </span>
+      <h2 id="faq-title">
+       A few little
+       <br/>
+       <em>
+        questions.
+       </em>
+      </h2>
+      <p>
+       Every garden is different. Here's a simple place to start.
+      </p>
+     </div>
+     <div class="faq-list">
+      <details>
+       <summary>
+        Can I ask about a one-off garden tidy?
+        <span aria-hidden="true">
+         +
+        </span>
+       </summary>
+       <p>
+        Absolutely &mdash; let George know whether you're thinking about a single visit or something more regular, and he can discuss what's possible.
+       </p>
+      </details>
+      <details>
+       <summary>
+        What if I'm not sure what service I need?
+        <span aria-hidden="true">
+         +
+        </span>
+       </summary>
+       <p>
+        No problem. Describe the garden job in your own words using the enquiry section; you don't need to know the gardening terminology.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Can I request a quote first?
+        <span aria-hidden="true">
+         +
+        </span>
+       </summary>
+       <p>
+        Yes. Share a little about the space and what you'd like done, so the work and possible next steps can be discussed.
+       </p>
+      </details>
+      <details>
+       <summary>
+        Which areas do you cover?
+        <span aria-hidden="true">
+         +
+        </span>
+       </summary>
+       <p>
+        George's local service area is being confirmed. Include your postcode when you enquire to help check whether your garden is within reach.
+       </p>
+      </details>
+     </div>
+    </div>
+   </section>
+<!-- Customer reviews: garden markers -->
+<section class="bb-garden-reviews" id="reviews" aria-labelledby="bb-reviews-title">
+  <div class="container">
+    <header class="bb-reviews-heading">
+      <span class="section-label">GOOD WORDS GROW HERE</span>
+      <h2 id="bb-reviews-title">Kind words, <em>planted with care.</em></h2>
+      <p>Kind words from people who have worked with George.</p>
+    </header>
+    <div class="bb-review-garden">
+      <!-- Review 1: genuine customer review -->
+      <article class="bb-review">
+        <div class="bb-review-marker">
+          <span class="bb-marker-top">A KIND WORD &bull; 01</span>
+          <h3 class="bb-review-title">Reliable, hard-working and trustworthy</h3>
+          <p class="bb-review-text">I have called on George to help me with one or two minor jobs in my garden and he is always willing to adapt to the client&#8217;s needs and availability. I am pleased with his work and will be doing more in future as a result.</p>
+          <p class="bb-review-author">Robert, Bicester</p>
+        </div>
+        <div class="bb-marker-stake" aria-hidden="true"></div>
+        <div class="bb-flower-rating" role="img" aria-label="Five out of five flowers, described as 100% amazing by the customer">
+          <span class="bb-rating-flower is-filled"></span>
+          <span class="bb-rating-flower is-filled"></span>
+          <span class="bb-rating-flower is-filled"></span>
+          <span class="bb-rating-flower is-filled"></span>
+          <span class="bb-rating-flower is-filled"></span>
+        </div>
+        <span class="bb-rating-caption">100% amazing</span>
+      </article>
+      <!-- Review 2: waiting for real customer comments -->
+      <article class="bb-review">
+        <div class="bb-review-marker">
+          <span class="bb-marker-top">A KIND WORD &bull; 02</span>
+          <p class="bb-review-text">Customer review two will appear here once the wording is confirmed.</p>
+          <p class="bb-review-author">First name, Location</p>
+        </div>
+        <div class="bb-marker-stake" aria-hidden="true"></div>
+        <div class="bb-flower-rating" role="img" aria-label="Rating not confirmed">
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+        </div>
+        <span class="bb-rating-caption">Rating to be confirmed</span>
+      </article>
+      <!-- Review 3: waiting for real customer comments -->
+      <article class="bb-review">
+        <div class="bb-review-marker">
+          <span class="bb-marker-top">A KIND WORD &bull; 03</span>
+          <p class="bb-review-text">Customer review three will appear here once the wording is confirmed.</p>
+          <p class="bb-review-author">First name, Location</p>
+        </div>
+        <div class="bb-marker-stake" aria-hidden="true"></div>
+        <div class="bb-flower-rating" role="img" aria-label="Rating not confirmed">
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+          <span class="bb-rating-flower"></span>
+        </div>
+        <span class="bb-rating-caption">Rating to be confirmed</span>
+      </article>
+    </div>
+  </div>
+  <div class="bb-review-soil" aria-hidden="true"></div>
+  <p class="bb-reviews-disclaimer">Robert's review is confirmed. Reviews two and three, including their ratings, are awaiting confirmation.</p>
+</section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-top">
+    <div>
+     <a class="brand footer-brand" href="#top">
+      <span class="brand-mark-wrap">
+       <img alt="" height="58" loading="lazy" src="assets/logo-symbol.png" width="58"/>
+      </span>
+      <span class="brand-lettering">
+       <strong>
+        George's
+       </strong>
+       <span>
+        BLOOM
+        <b>
+         &amp;
+        </b>
+        BROOM
+       </span>
+      </span>
+     </a>
+     <p>
+      A little more green. A little less hassle.
+      <br/>
+      Gardens cared for, the friendly way.
+     </p>
+    </div>
+    <div class="footer-links">
+     <div>
+      <h3>
+       Explore
+      </h3>
+      <a href="#services">
+       Explore the garden
+      </a>
+      <a href="#about">
+       About us
+      </a>
+      <a href="#gallery">
+       Garden inspiration
+      </a>
+     </div>
+     <div>
+      <h3>
+       Get in touch
+      </h3>
+      <a href="#quote">
+       Ask for a quote
+      </a>
+      <a href="#faq">
+       Common questions
+      </a>
+      <a href="#top">
+       Back to top &uarr;
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="container footer-bottom">
+    <span>
+     &copy;
+     <span id="year">
+      2026
+     </span>
+     George's Bloom &amp; Broom. All rights reserved.
+    </span>
+    <span>
+     Website concept &middot; Details to confirm before launch
+    </span>
+   </div>
+  </footer>
+ <script>
+/* The existing script.js is unchanged. This small independent enhancement
+   animates the navigation vine and blooms one flower when a link is hovered
+   or keyboard-focused. It remains decorative and never blocks navigation. */
+(() => {
+  const header = document.querySelector('.site-header');
+  const border = document.getElementById('gb-vine-border');
+  const growing = border?.querySelector('.gb-vine-growing');
+  if (!header || !border || !growing) return;
+
+  let frame = 0;
+  function drawGrowth() {
+    frame = 0;
+    const total = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const fraction = total ? Math.min(1, Math.max(0, window.scrollY / total)) : 0;
+    growing.style.strokeDashoffset = String(800 * (1 - fraction));
+  }
+  function requestGrowth() {
+    if (!frame) frame = window.requestAnimationFrame(drawGrowth);
+  }
+  window.addEventListener('scroll', requestGrowth, {passive:true});
+  window.addEventListener('resize', requestGrowth, {passive:true});
+  requestGrowth();
+
+  function bloom(link) {
+    const rect = link.getBoundingClientRect();
+    const headerRect = header.getBoundingClientRect();
+    const x = rect.left + rect.width / 2 - headerRect.left;
+    header.style.setProperty('--gb-flower-x', `${Math.min(headerRect.width - 25, Math.max(25, x))}px`);
+    header.classList.remove('gb-vine-blooming');
+    void header.offsetWidth;
+    header.classList.add('gb-vine-blooming');
+  }
+  const stop = () => header.classList.remove('gb-vine-blooming');
+  header.querySelectorAll('.site-nav a, .header-cta').forEach(link => {
+    link.addEventListener('mouseenter', () => bloom(link));
+    link.addEventListener('mouseleave', stop);
+    link.addEventListener('focus', () => bloom(link));
+    link.addEventListener('blur', stop);
+  });
+  const menu = header.querySelector('.menu-button');
+  if (menu) menu.addEventListener('click', () => {
+    bloom(menu);
+    window.setTimeout(stop, 650);
+  });
+})();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+/* ================================================================
+   GEORGE'S BLOOM & BROOM - THICKER GROWING VINE HEADER
+   Decorative only: does not intercept clicks or replace navigation.
+   ================================================================ */
+.site-header { --gb-flower-x: 50%; overflow: visible; }
+.gb-vine-border {
+  position: relative;
+  isolation: isolate;
+  height: 59px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,254,250,.985), #fbfcf5 88%);
+  border-bottom: 1px solid rgba(87,121,73,.17);
+  pointer-events: none;
+}
+.gb-vine-svg {
+  position: absolute;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+  display: block;
+  height: 100%;
+  width: max(100%, 980px);
+  overflow: visible;
+}
+.gb-vine-shadow {
+  fill: none;
+  stroke: #a9c097;
+  stroke-width: 7.2;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  opacity: .64;
+}
+.gb-vine-growing {
+  fill: none;
+  stroke: #4d7b4c;
+  stroke-width: 4.4;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  transition: stroke-dashoffset .65s ease-out;
+}
+.gb-vine-stem {
+  fill: none;
+  stroke: #668f5d;
+  stroke-width: 3.05;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.gb-vine-leaf {
+  fill: #82a56d;
+  stroke: #5b8655;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+.gb-vine-sprig:nth-of-type(4n) .gb-vine-leaf { fill: #9bbb87; }
+.gb-vine-sprig:nth-of-type(6n) .gb-vine-leaf { fill: #6e9a68; }
+.gb-vine-small-leaf { opacity: .86; }
+.gb-vine-petal {
+  fill: #e495aa;
+  stroke: #cb7b96;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+.gb-vine-flower-centre { fill: #f3d091; stroke: #d5af70; stroke-width: 1.3; }
+.gb-hover-flower {
+  position: absolute;
+  z-index: 4;
+  left: var(--gb-flower-x);
+  top: 1px;
+  width: 57px;
+  height: 57px;
+  opacity: 0;
+  transform: translateX(-50%) scale(.12) rotate(-15deg);
+  transform-origin: center;
+  filter: drop-shadow(0 3px 5px rgba(93,49,60,.16));
+  transition: opacity .2s ease-out, transform .45s cubic-bezier(.18,1.3,.35,1);
+}
+.gb-hover-flower svg { display:block; width:100%;height:100%; }
+.gb-hover-petals ellipse { fill:#d87e9d;stroke:#c16a88;stroke-width:1.1; }
+.site-header.gb-vine-blooming .gb-hover-flower {
+  opacity: 1;
+  transform: translateX(-50%) scale(1) rotate(0deg);
+}
+@media (max-width: 900px) {
+  .gb-vine-border { height: 42px; }
+  .gb-vine-svg { width: max(100%, 900px); }
+  .gb-hover-flower { width: 43px; height: 43px; top: 0; }
+  .site-header .site-nav { position: absolute; top: 100%; max-height: calc(100vh - 119px); }
+}
+@media (max-width: 680px) {
+  .gb-vine-border { height: 37px; }
+  .gb-vine-svg { width: max(100%, 790px); }
+  .gb-hover-flower { width: 38px; height: 38px; }
+  .site-header .site-nav { top: 100%; max-height: calc(100vh - 109px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gb-vine-growing, .gb-hover-flower { transition: none !important; }
+}

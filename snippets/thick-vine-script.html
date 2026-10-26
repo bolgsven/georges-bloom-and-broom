@@ -1,0 +1,47 @@
+<script>
+/* The existing script.js is unchanged. This small independent enhancement
+   animates the navigation vine and blooms one flower when a link is hovered
+   or keyboard-focused. It remains decorative and never blocks navigation. */
+(() => {
+  const header = document.querySelector('.site-header');
+  const border = document.getElementById('gb-vine-border');
+  const growing = border?.querySelector('.gb-vine-growing');
+  if (!header || !border || !growing) return;
+
+  let frame = 0;
+  function drawGrowth() {
+    frame = 0;
+    const total = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const fraction = total ? Math.min(1, Math.max(0, window.scrollY / total)) : 0;
+    growing.style.strokeDashoffset = String(800 * (1 - fraction));
+  }
+  function requestGrowth() {
+    if (!frame) frame = window.requestAnimationFrame(drawGrowth);
+  }
+  window.addEventListener('scroll', requestGrowth, {passive:true});
+  window.addEventListener('resize', requestGrowth, {passive:true});
+  requestGrowth();
+
+  function bloom(link) {
+    const rect = link.getBoundingClientRect();
+    const headerRect = header.getBoundingClientRect();
+    const x = rect.left + rect.width / 2 - headerRect.left;
+    header.style.setProperty('--gb-flower-x', `${Math.min(headerRect.width - 25, Math.max(25, x))}px`);
+    header.classList.remove('gb-vine-blooming');
+    void header.offsetWidth;
+    header.classList.add('gb-vine-blooming');
+  }
+  const stop = () => header.classList.remove('gb-vine-blooming');
+  header.querySelectorAll('.site-nav a, .header-cta').forEach(link => {
+    link.addEventListener('mouseenter', () => bloom(link));
+    link.addEventListener('mouseleave', stop);
+    link.addEventListener('focus', () => bloom(link));
+    link.addEventListener('blur', stop);
+  });
+  const menu = header.querySelector('.menu-button');
+  if (menu) menu.addEventListener('click', () => {
+    bloom(menu);
+    window.setTimeout(stop, 650);
+  });
+})();
+</script>
